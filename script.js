@@ -19,7 +19,7 @@ function typeWriter(text, element, speed = 100) {
 document.addEventListener("DOMContentLoaded", function () {
   const typewriter = document.getElementById("typewriter");
   if (typewriter) {
-      const words = [": Researcher", ": Engineer", ": Data Scientist"];
+      const words = [": Dreamer", ": Engineer", ": Scholar", ": Coder"];
       let wordIndex = 0;
       let charIndex = 0;
       let isDeleting = false;
