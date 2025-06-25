@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me - Baligen Talihati</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .profile-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .profile-photo {
+      flex: 0 0 220px;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-text {
+      flex: 1 1 400px;
+    }
+
+    .profile-section {
+      margin-top: 2rem;
+    }
+
+    .profile-section h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.25rem;
+    }
+
+    .profile-section ul {
+      padding-left: 1.25em;
+    }
+
+    .profile-details p,
+    .profile-section li {
+      margin: 0.4em 0;
+    }
+
+    .profile-details a {
+      color: #EE7FED;
+      text-decoration: none;
+    }
+
+    .profile-details a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .profile-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .profile-photo {
+        margin-bottom: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Baligen Talihati</a>
+
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Me</a></li>
+          <li><a href="news.html" class="nav-link">News</a></li>
+          <li><a href="research.html" class="nav-link">Research</a></li>
+          <li><a href="teaching.html" class="nav-link">Teaching</a></li>
+          <li><a href="resources/cv_recent.pdf" class="nav-link">CV</a></li>
+          <li><a href="friends.html" class="nav-link">Friends</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Hamburger Menu -->
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar-menu" id="sidebar-menu">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Me</a></li>
+          <li><a href="news.html" class="nav-link">News</a></li>
+          <li><a href="research.html" class="nav-link">Research</a></li>
+          <li><a href="teaching.html" class="nav-link">Teaching</a></li>
+          <li><a href="resources/cv_recent.pdf" class="nav-link">CV</a></li>
+          <li><a href="friends.html" class="nav-link">Friends</a></li>
+        </ul>
+      </div>
+
+<main class="main-content">
+  <div class="container">
+    <div class="content-card">
+      <h2 class="section-title">About Me</h2>
+
+      <div class="profile-container">
+        <!-- Left: Photo -->
+        <div class="profile-photo">
+          <img src="images/avatar.jpg" alt="Baligen Talihati">
+        </div>
+
+        <!-- Right: Text -->
+        <div class="profile-text">
+          <p class="hero-description">
+            I am a Ph.D. candidate in the Department of Electrical Engineering at the University of Tennessee, Knoxville, where I research power grid resilience, cyberattacks, and the integration of AI methods.
+            My work combines computer vision, machine learning, and power system modeling to develop innovative solutions for complex smart grid challenges.
+          </p>
+          <p class="hero-description">
+            With a background in electrical engineering and electronic science, I build models and tools that support planning and decision-making for power grids under cyber threats and climate-related risks.
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Education Section -->
+      <div class="profile-section">
+        <h3>Education</h3>
+        <ul>
+          <div>
+          <li><strong>Ph.D. candidate in Electrical ENgineering</strong>, University of Tennessee, Knoxville (expected 2029)
+            <!-- <br><small>Dissertation: Data-Driven Planning for Resilience Against Natural Hazard Risks</small></li> -->
+          <li><strong>MS in Electronics Science and Technology</strong>, Fudan University (2025)
+            <br><small>Thesis: <a >Study on the Cooperative Control in Shared Energy Storage Communities Based on Multi-Agent Reinforcement Learning</a></small>
+          </li> 
+          <li><strong>BE in Electrical Engineering and Automation</strong>, Fudan University (2020)
+            <!-- <br><small>Thesis: Monitoring North Korea’s 4th Nuclear Test Site Using Sentinel-1A DInSAR</small></li> -->
+        </ul>
+      </div>
+
+      <!-- Research Section -->
+      <div class="profile-section">
+        <h3>Research</h3>
+        <p class="hero-description">
+          My research bridges artificial intelligence, power systems engineering, and cyber-physical infrastructure resilience to enhance the reliability and adaptability of smart grids under external threats such as cyberattacks and extreme climate events.
+          <!-- I develop intelligent tools that help us better understand, predict, and respond to disruptions in energy systems—particularly focusing on grid-aware AI models, multi-agent coordination, and data-driven decision-making. -->
+          <!-- Through my work, I aim to build AI-powered decision support systems that assist utility operators, policymakers, and critical infrastructure managers in planning resilient and sustainable energy futures. -->
+          <!-- My research sits at the nexus of power grid modeling, spatial-temporal analysis, and adaptive control strategies—where intelligent algorithms meet real-world grid challenges in the age of climate uncertainty and digital threats. -->
+        </p>
+      </div>
+
+      <!-- Awards Section -->
+      <div class="profile-section">
+        <h3>Awards</h3>
+        <p class="hero-description">
+
+    <!-- Honors & Awards Dropdown -->
+    <div class="dropdown-section">
+      <div class="dropdown-header" onclick="toggleDropdown(this)">
+        Honors & Awards <span class="dropdown-arrow">&#9654;</span>
+      </div>
+      <div class="dropdown-content">
+        <div class="award-entry"><strong>Shanghai Municipal Outstanding Graduate Award (April 2025)</strong> <span class="scholarship-sponsor">Fudan University</span></div>
+      </div>
+    </div>
+
+    <!-- Scholarships Dropdown -->
+    <div class="dropdown-section">
+      <div class="dropdown-header" onclick="toggleDropdown(this)">
+        Scholarships <span class="dropdown-arrow">&#9654;</span>
+      </div>
+      <div class="dropdown-content">
+        <div class="scholarship-entry"><strong>Corporate-Sponsored Scholarship (Sept 2024)</strong> <span class="scholarship-sponsor">Fudan University</span></div>
+      </div>
+    </div>
+
+
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</main>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleDropdown(element) {
+      const section = element.parentElement;
+      section.classList.toggle('open');
+    }
+  </script>
+  
+</body>
+</html>

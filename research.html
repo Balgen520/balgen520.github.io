@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research - Minho Kim</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .publication-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .publication-item {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+      border-left: 6px solid #EE7FED;
+    }
+
+    .publication-item:hover {
+      transform: translateY(-2px);
+      transition: 0.3s ease;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    }
+
+    .publication-item p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .publication-item a {
+      color: #EE7FED;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .publication-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* .filter-btns {
+      margin-bottom: 2rem;
+    }
+
+    .filter-btns strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #333;
+    } */
+
+    /* .year-btn, .tag-btn {
+      margin: 0.25rem;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #333;
+      background: white;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .year-btn:hover, .tag-btn:hover {
+      background: #3366cc;
+      color: white;
+      border-color: #3366cc;
+    }
+
+    .year-btn.active, .tag-btn.active {
+      background: #3366cc;
+      color: white;
+      border-color: #3366cc;
+    } */
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .tag-label {
+      margin-top: 0.5rem;
+    }
+
+    .pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+  }
+
+  .items-per-page {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .items-per-page select {
+    padding: 0.5rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    font-size: 0.9rem;
+  }
+
+  .results-info {
+    font-weight: 600;
+    color: #666;
+  }
+
+  /* ===== PUBLICATION LIST ===== */
+  .publication-container {
+    max-height: 800px;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+
+  .publication-container::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .publication-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  .publication-container::-webkit-scrollbar-thumb {
+    background: #3366cc;
+    border-radius: 10px;
+  }
+
+  .publication-container::-webkit-scrollbar-thumb:hover {
+    background: #EE7FED;
+  }
+
+  .publication-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .publication-item {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-left: 6px solid #EE7FED;
+    transition: all 0.3s ease;
+  }
+
+  .publication-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  }
+
+  .publication-item p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  .publication-item a {
+    color: #EE7FED;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .publication-item a:hover {
+    text-decoration: underline;
+  }
+
+  </style>
+</head>
+<body>
+  <!-- Floating particles -->
+  <div class="particles"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Minho Kim</a>
+
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Me</a></li>
+          <li><a href="news.html" class="nav-link">News</a></li>
+          <li><a href="research.html" class="nav-link">Research</a></li>
+          <li><a href="teaching.html" class="nav-link">Teaching</a></li>
+          <li><a href="resources/cv_recent.pdf" class="nav-link">CV</a></li>
+          <li><a href="friends.html" class="nav-link">Friends</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Hamburger Menu -->
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar-menu" id="sidebar-menu">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Me</a></li>
+          <li><a href="news.html" class="nav-link">News</a></li>
+          <li><a href="research.html" class="nav-link">Research</a></li>
+          <li><a href="teaching.html" class="nav-link">Teaching</a></li>
+          <li><a href="resources/cv_recent.pdf" class="nav-link">CV</a></li>
+          <li><a href="friends.html" class="nav-link">Friends</a></li>
+        </ul>
+      </div>
+
+  <!-- Main -->
+  <main class="main-content">
+    <div class="container">
+      <div class="content-card">
+        <h2 class="section-title">Publications</h2>
+
+        <div class="filter-controls">
+          <div class="filter-row">
+            <strong>Filter by Year:</strong>
+            <div class="filter-btns">
+              <button class="year-btn active" data-year="all">All</button>
+              <button class="year-btn" data-year="2025">2025</button>
+              <button class="year-btn" data-year="2024">2024</button>
+            </div>
+          </div>
+        
+          <div class="filter-row">
+            <strong>Filter by Type:</strong>
+            <div class="filter-btns">
+              <button class="type-btn active" data-type="all">All</button>
+              <button class="type-btn" data-type="paper">Paper</button>
+              <button class="type-btn" data-type="cpaper">Conference</button>
+              <button class="type-btn" data-type="ppaper">Preprint</button>
+            </div>
+          </div>
+
+          <div class="filter-row">
+            <strong>Filter by Field:</strong>
+            <div class="filter-btns">
+              <button class="tag-btn active" data-tag="all">All</button>
+              <button class="tag-btn" data-tag="cn">Carbon Network</button>
+              <button class="tag-btn" data-tag="sys">Energy Systems</button>
+              <button class="tag-btn" data-tag="com">Community</button>
+              <button class="tag-btn" data-tag="ml">Machine Learning</button>
+              <button class="tag-btn" data-tag="em">Energy Management</button>
+              <button class="tag-btn" data-tag="es">Energy Storage</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="pagination-controls">
+          <div class="items-per-page">
+            <label for="itemsPerPage">Show:</label>
+            <select id="itemsPerPage">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="20">20</option>
+              <option value="all">All</option>
+            </select>
+            <span>items</span>
+          </div>
+          <div class="results-info" id="resultsInfo">
+            Showing <span id="showingCount">0</span> of <span id="totalCount">0</span>
+          </div>
+        </div>
+
+        <!-- Publications -->
+        <div class="publication-list">
+          <div class="publication-item" data-year="2025" data-type="paper" data-tags="cn,sys">
+            <p>Bowen Zhang, <strong>Baligen Talihati</strong>, et al. (2025). <a href="https://doi.org/10.1016/j.jclepro.2025.145878">A dynamic carbon flow traceability framework for integrated energy systems</a>. <i>Journal of Cleaner Production</i>, 518, 145878</p>
+            <span class="research-tag paper">Paper</span>
+            <span class="research-tag cn">Carbon Network</span>
+            <span class="research-tag sys">Energy Systems</span>
+          </div>
+
+          <!-- Yao, X., Kim, M., Dronova, I., McBride, J. R., Kondolf, G. M., & Radke, J. D. (2025). Community-scale microclimate simulation using Airborne Laser Scanning and object-based urban tree classification. Landscape and Urban Planning, 263, 105420. -->
+          <div class="publication-item" data-year="2024" data-type="paper" data-tags="ML,em,com">
+            <p><strong>Baligen Talihati</strong>, Shiyi Fu, et al. (2024). <a href="https://doi.org/10.1016/j.apenergy.2024.125039">Community shared ES-PV system for managing electric vehicle loads via multi-agent reinforcement learning</a>. <i>Applied Energy</i>, 380, 125039</p>
+            <span class="research-tag paper">Paper</span>
+            <span class="research-tag ml">Machine Learning</span>
+            <span class="research-tag em">Energy Manegement</span>
+            <span class="research-tag com">Community</span>
+          </div>
+
+          <div class="publication-item" data-year="2024" data-type="ppaper" data-tags="es,com">
+            <p><strong>Baligen Talihati</strong>, Shengyu Tao, et al. (2024). <a href="https://doi.org/10.1016/j.apenergy.2024.123880">Energy storage sharing in residential communities with controllable loads for enhanced operational efficiency and profitability</a>. <i>Applied Energy</i>,373, 123880</p>
+            <span class="research-tag ppaper">Paper</span>
+            <span class="research-tag es">Energy Storage</span>
+            <span class="research-tag com">Community</span>
+          </div>
+          
+        </div>
+      </div>
+
+
+    <!-- </div> -->
+    <!-- <div class="content-card">
+    <div class="research-section">
+        <h2 class="section-title">Projects</h2> -->
+        
+        <!-- Filter Controls -->
+        <!-- <div class="filter-controls">
+            <div class="filter-group">
+                <label for="field-filter">Filter by Field:</label>
+                <select id="field-filter" class="filter-select">
+                    <option value="">All Fields</option>
+                    <option value="Natural Hazards">Natural Hazards</option>
+                    <option value="GeoAI">GeoAI</option>
+                    <option value="Urban Planning">Urban Planning</option>
+                    <option value="Network Science">Network Science</option>
+                    <option value="ML/DL">ML/DL</option>
+                    <option value="Remote Sensing">Remote Sensing</option>
+                    <option value="Coastal">Coastal</option>
+                    <option value="Geopolitical">Geopolitical</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="status-filter">Filter by Status:</label>
+                <select id="status-filter" class="filter-select">
+                    <option value="">All Status</option>
+                    <option value="Ongoing">Ongoing</option>
+                    <option value="Completed">Completed</option>
+                    <option value="In Progress">In Progress</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <input type="text" id="search-input" placeholder="Search projects..." class="search-input">
+            </div>
+            <button id="clear-filters" class="clear-btn">Clear Filters</button>
+        </div> -->
+
+        <!-- <table class="research-table" id="projects-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Research Field</th>
+                    <th>Status</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-fields="Natural Hazards,GeoAI" data-status="Ongoing">
+                    <td>GeoAI for Natural Hazard Prediction</td>
+                    <td><span class="research-tag">Natural Hazards</span><span class="research-tag">GeoAI</span></td>
+                    <td>Ongoing</td>
+                    <td>2021-Present</td>
+                </tr>
+                <tr data-fields="Urban Planning,Network Science" data-status="Ongoing">
+                    <td>Urban Resilience Network Analysis</td>
+                    <td><span class="research-tag">Urban Planning</span><span class="research-tag">Network Science</span></td>
+                    <td>Ongoing</td>
+                    <td>2022-Present</td>
+                </tr>
+                <tr data-fields="Urban,ML/DL" data-status="Completed">
+                    <td>Local Climate Zone Classification</td>
+                    <td><span class="research-tag">Urban</span><span class="research-tag">ML/DL</span></td>
+                    <td>Completed</td>
+                    <td>2019-2021</td>
+                </tr>
+                <tr data-fields="Remote Sensing,Geopolitical" data-status="Completed">
+                    <td>DInSAR Nuclear Test Site Detection</td>
+                    <td><span class="research-tag">Remote Sensing</span><span class="research-tag">Geopolitical</span></td>
+                    <td>Completed</td>
+                    <td>2017</td>
+                </tr>
+                <tr data-fields="Natural Hazards,Coastal" data-status="In Progress">
+                    <td>Coastal Flood Risk Modeling</td>
+                    <td><span class="research-tag">Natural Hazards</span><span class="research-tag">Coastal</span></td>
+                    <td>In Progress</td>
+                    <td>2023-Present</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+</div>
+</main>     -->
+    
+  </main>
+
+  <!-- Filter Script -->
+  <script>
+    class PublicationFilter {
+      constructor() {
+        this.allPublications = Array.from(document.querySelectorAll('.publication-item'));
+        this.filteredPublications = [...this.allPublications];
+        this.currentPage = 1;
+        this.itemsPerPage = 10;
+        
+        this.selectedYears = new Set(['all']);
+        this.selectedTypes = new Set(['all']);
+        this.selectedTags = new Set(['all']);
+        
+        this.initializeEventListeners();
+        this.updateDisplay();
+      }
+      
+      initializeEventListeners() {
+        // Year filter buttons
+        document.querySelectorAll('.year-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => this.handleYearFilter(e));
+        });
+        
+        // Type filter buttons
+        document.querySelectorAll('.type-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => this.handleTypeFilter(e));
+        });
+        
+        // Tag filter buttons
+        document.querySelectorAll('.tag-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => this.handleTagFilter(e));
+        });
+        
+        // Items per page selector
+        document.getElementById('itemsPerPage').addEventListener('change', (e) => {
+          this.itemsPerPage = e.target.value === 'all' ? this.filteredPublications.length : parseInt(e.target.value);
+          this.currentPage = 1;
+          this.updateDisplay();
+        });
+      }
+      
+      handleYearFilter(e) {
+        const year = e.target.dataset.year;
+        
+        if (year === 'all') {
+          this.selectedYears.clear();
+          this.selectedYears.add('all');
+        } else {
+          if (this.selectedYears.has('all')) {
+            this.selectedYears.clear();
+          }
+          
+          if (this.selectedYears.has(year)) {
+            this.selectedYears.delete(year);
+          } else {
+            this.selectedYears.add(year);
+          }
+          
+          if (this.selectedYears.size === 0) {
+            this.selectedYears.add('all');
+          }
+        }
+        
+        this.updateFilters();
+      }
+      
+      handleTypeFilter(e) {
+        const type = e.target.dataset.type;
+        
+        if (type === 'all') {
+          this.selectedTypes.clear();
+          this.selectedTypes.add('all');
+        } else {
+          if (this.selectedTypes.has('all')) {
+            this.selectedTypes.clear();
+          }
+          
+          if (this.selectedTypes.has(type)) {
+            this.selectedTypes.delete(type);
+          } else {
+            this.selectedTypes.add(type);
+          }
+          
+          if (this.selectedTypes.size === 0) {
+            this.selectedTypes.add('all');
+          }
+        }
+        
+        this.updateFilters();
+      }
+      
+      handleTagFilter(e) {
+        const tag = e.target.dataset.tag;
+        
+        if (tag === 'all') {
+          this.selectedTags.clear();
+          this.selectedTags.add('all');
+        } else {
+          if (this.selectedTags.has('all')) {
+            this.selectedTags.clear();
+          }
+          
+          if (this.selectedTags.has(tag)) {
+            this.selectedTags.delete(tag);
+          } else {
+            this.selectedTags.add(tag);
+          }
+          
+          if (this.selectedTags.size === 0) {
+            this.selectedTags.add('all');
+          }
+        }
+        
+        this.updateFilters();
+      }
+      
+      updateFilters() {
+        this.filteredPublications = this.allPublications.filter(pub => {
+          const pubYear = pub.dataset.year;
+          const pubType = pub.dataset.type;
+          const pubTags = pub.dataset.tags ? pub.dataset.tags.toLowerCase().split(',') : [];
+          
+          // Check year filter
+          const yearMatch = this.selectedYears.has('all') || this.selectedYears.has(pubYear);
+          
+          // Check type filter
+          const typeMatch = this.selectedTypes.has('all') || this.selectedTypes.has(pubType);
+          
+          // Check tag filter
+          const tagMatch = this.selectedTags.has('all') || 
+            pubTags.some(tag => this.selectedTags.has(tag.trim()));
+          
+          return yearMatch && typeMatch && tagMatch;
+        });
+        
+        this.currentPage = 1;
+        this.updateButtonStates();
+        this.updateDisplay();
+      }
+      
+      updateButtonStates() {
+        // Update year buttons
+        document.querySelectorAll('.year-btn').forEach(btn => {
+          const year = btn.dataset.year;
+          btn.classList.toggle('active', this.selectedYears.has(year));
+        });
+        
+        // Update type buttons
+        document.querySelectorAll('.type-btn').forEach(btn => {
+          const type = btn.dataset.type;
+          btn.classList.toggle('active', this.selectedTypes.has(type));
+        });
+        
+        // Update tag buttons
+        document.querySelectorAll('.tag-btn').forEach(btn => {
+          const tag = btn.dataset.tag;
+          btn.classList.toggle('active', this.selectedTags.has(tag));
+        });
+      }
+      
+      updateDisplay() {
+        // Hide all publications first
+        this.allPublications.forEach(pub => {
+          pub.style.display = 'none';
+        });
+        
+        // Calculate pagination
+        const totalItems = this.filteredPublications.length;
+        const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+        const endIndex = this.itemsPerPage === totalItems ? totalItems : 
+          Math.min(startIndex + this.itemsPerPage, totalItems);
+        
+        // Show filtered publications for current page
+        const itemsToShow = this.filteredPublications.slice(startIndex, endIndex);
+        itemsToShow.forEach(pub => {
+          pub.style.display = 'block';
+        });
+        
+        // Update results info
+        document.getElementById('showingCount').textContent = itemsToShow.length;
+        document.getElementById('totalCount').textContent = totalItems;
+        
+        // Update items per page selector
+        const itemsPerPageSelect = document.getElementById('itemsPerPage');
+        if (this.itemsPerPage === totalItems && totalItems > 0) {
+          itemsPerPageSelect.value = 'all';
+        }
+      }
+    }
+    
+    // Initialize the filter system when the page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      new PublicationFilter();
+    });
+  </script>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
