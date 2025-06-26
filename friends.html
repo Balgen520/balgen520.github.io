@@ -1,76 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Friends - Baligen Talihati</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
-    }
-    .header, .nav-menu a {
-      /* 复用你主页的导航样式 */
-      font-weight: bold;
-    }
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .friends-grid {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-    .friend-card {
-      background: white;
-      padding: 1.25rem 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
-      transition: box-shadow 0.3s ease;
-      width: 80%;
-      max-width: 700px;
-    }
-    .friend-card:hover {
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
-    }
-    .friend-name {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-    .friend-name a {
-      color: #EE7FED;
-      text-decoration: none;
-    }
-    .friend-name a:hover {
-      text-decoration: underline;
-    }
-    .friend-info {
-      font-size: 0.95rem;
-      color: #444;
-      line-height: 1.4;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends - Baligen Talihati</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Floating particles -->
+    <div class="particles"></div>
 
-  <!-- Header (你可以替换成你主页相同的header结构) -->
+  <!-- Header -->
   <header class="header">
     <div class="container nav-container">
       <a href="index.html" class="logo">Baligen Talihati</a>
 
       <nav>
         <ul class="nav-menu" id="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html" class="nav-link active">Home</a></li>
           <li><a href="about.html" class="nav-link">About Me</a></li>
           <li><a href="news.html" class="nav-link">News</a></li>
           <li><a href="research.html" class="nav-link">Research</a></li>
@@ -80,28 +28,54 @@
         </ul>
       </nav>
 
-      <!-- Mobile Hamburger Menu (如果主页有，请同步加上) -->
+      <!-- Mobile Hamburger Menu -->
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
-  <main class="main-content">
-    <div class="container">
-      <h1>Friends</h1>
-      <div class="friends-grid">
-        <!-- 单个朋友卡片 -->
-        <div class="friend-card">
-          <div class="friend-name">
-            <a href="https://dijiacai.github.io/" target="_blank" rel="noopener noreferrer">Dijia Cai</a>
-          </div>
-          <div class="friend-info">
-            Research interests lie at AI for science (Deep Operator Network and its application) and computer vision. Currently actively seeking PhD opportunities.
-          </div>
-        </div>
-
-        <!-- 以后添加更多朋友就复制上面<div class="friend-card">内容，修改里面信息即可 -->
+    <!-- Sidebar Menu -->
+    <div class="sidebar-menu" id="sidebar-menu">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Me</a></li>
+          <li><a href="news.html" class="nav-link">News</a></li>
+          <li><a href="research.html" class="nav-link">Research</a></li>
+          <li><a href="teaching.html" class="nav-link">Teaching</a></li>
+          <li><a href="resources/cv_recent.pdf" class="nav-link">CV</a></li>
+          <li><a href="friends.html" class="nav-link">Friends</a></li>
+        </ul>
       </div>
-    </div>
-  </main>
 
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-card">
+                
+                <h2 class="section-title"><a href="https://dijiacai.github.io/" target="_blank" rel="noopener noreferrer">Dijia Cai</a></h2>
+                <p class="hero-description">
+                  Research interests lie at AI for science (Deep Operator Network and its application) 
+                  and computer vision. Currently actively seeking PhD opportunities.
+                </p>
+
+                <div class="content-card">
+                    <h2 class="section-title">News</h2>
+                    
+                    <p class="hero-description">
+                      BlaBla
+                    </p> 
+                    
+                    
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
