@@ -6,9 +6,9 @@
     --text-secondary: #684a63;
     --text-muted: #967195;
     --bg-glass: rgba(255, 255, 255, 0.95);
-    --bg-light: #f7fafc;
-    --bg-accent: #f0f4ff;
-    --border-color: #e2e8f0;
+    --bg-light: #fcf7fa;
+    --bg-accent: #fff0fe;
+    --border-color: #f0e2ef;
     --shadow-light: 0 8px 32px rgba(100, 81, 81, 0.1);
     --shadow-medium: 0 15px 40px rgba(0, 0, 0, 0.1);
     --shadow-heavy: 0 25px 60px rgba(0, 0, 0, 0.15);
