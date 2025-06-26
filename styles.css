@@ -13,7 +13,7 @@
     --shadow-medium: 0 15px 40px rgba(0, 0, 0, 0.1);
     --shadow-heavy: 0 25px 60px rgba(0, 0, 0, 0.15);
     --gradient-primary: linear-gradient(135deg, #EE7FED, #764ba2);
-    --gradient-bg: linear-gradient(135deg, #f0f4ff, #e6f3ff);
+    --gradient-bg: linear-gradient(135deg, #fff0fd, #ffe6fb);
     --border-radius: 15px;
     --transition: all 0.3s ease;
     --header-height: 70px;
