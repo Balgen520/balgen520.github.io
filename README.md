@@ -1,12 +1,29 @@
-# Personal Website
+# 🌸 Hi there, I'm Baligen Talihati! 👋
 
-# Hi, I'm Baligen Talihati 👋
-Welcome to the source code of my personal academic website.  
-Through this site, I hope to showcase my academic activities and, over time, expand it to include more sections that reflect different aspects of who I am.
+Welcome to my little corner on GitHub!  
+I'm currently building my academic website and documenting things I love and learn along the way. ✨
 
-🌐 Website: https://balgen520.github.io/
+---
 
-## 🚀 Acknowledgement
+## 🌐 Personal Website
+Check it out here:  
+👉 **https://balgen520.github.io/**  
+I share my academic activities, projects, and fun ideas there!
 
-This personal homepage is adapted from [minhokim93's website](https://github.com/minhokim93/website).  
-Special thanks to the original author for sharing the template under an open-source license.
+---
+
+## 🧠 About Me
+- 🎓 Currently exploring topics that interest me (and sometimes confuse me 😭)
+- 💻 Passionate about learning, building, and staying curious  
+- 🪴 Aiming to grow this space into something more personal and creative  
+
+---
+
+## 🙏 Acknowledgement
+This personal website is adapted from **minhokim93**’s template.  
+Big thanks for the open-source spirit! 💖
+
+---
+
+Thanks for visiting!  
+Feel free to drop by my website or check back for updates! 🌈
