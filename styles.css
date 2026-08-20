@@ -1152,4 +1152,78 @@
   .site-footer p {
     margin: 0.3rem 0;
   }
+
+ .skills-section {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.skills-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.skill-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 84px;
+    padding: 14px 8px;
+    border-radius: 14px;
+    background: #f7f8fa;
+    border: 1px solid #eceef1;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    cursor: default;
+}
+
+.skill-icon-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+}
+
+.skill-icon-item i {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.skill-icon-item span {
+    font-size: 12px;
+    color: #555;
+    font-weight: 500;
+}
+
+.skills-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.skill-category h4 {
+    font-size: 15px;
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    font-weight: 600;
+}
+
+.skill-category h4 i {
+    color: #4a7c9e; /* 建议改成你网站已有的主题色 */
+}
+
+@media (max-width: 600px) {
+    .skill-icon-item {
+        width: 72px;
+        padding: 10px 6px;
+    }
+    .skill-icon-item i {
+        font-size: 22px;
+    }
+}
   
